@@ -5,7 +5,11 @@ import tornado.web
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write("Hello, world")
+        print("数据出书","test")
+        # Response.AddHeader("Access-Control-Allow-Origin", "*");
+        self.set_header("Access-Control-Allow-Origin","*");
+        # self.set_header("Content-Type","text/html");
+        self.write("{'nihao':'hello the wrolr'}")
 
 def make_app():
     # 怎么拦截所有的请求
